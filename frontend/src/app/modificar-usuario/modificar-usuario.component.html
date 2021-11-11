@@ -1,0 +1,53 @@
+<div>
+    <h2>MODIFICAR USUARIO:</h2>
+    <form [formGroup]="usuarioForm" (ngSubmit)="modificarUsuario()">
+    
+
+    <p>
+        ID usuario: <input type="string" placeholder="ID usuario" formControlName="id" />*
+        <ng-container
+          *ngIf="!formControls.id.valid && formControls.id.touched">
+          <p *ngIf="formControls.id.errors.required">
+            Este Campo es Obligatorio
+          </p>
+        </ng-container>
+      </p>
+  
+      <p>
+        Username: <input type="string" placeholder="Username" formControlName="username" />*
+        <ng-container
+          *ngIf="!formControls.descripcion.valid && formControls.descripcion.touched">
+          <p *ngIf="formControls.descripcion.errors.required">
+            Este Campo es Obligatorio
+          </p>
+        </ng-container>
+      </p>
+    
+      <p>
+        Password: <input type="string" placeholder="Password" formControlName="password" />*
+        <ng-container
+          *ngIf="!formControls.responsable.valid && formControls.responsable.touched">
+          <p *ngIf="formControls.responsable.errors.required">
+            Este Campo es Obligatorio
+          </p>
+        </ng-container>
+      </p>
+  
+      <p>
+        Email: <input type="string" placeholder="Email" formControlName="email" />*
+        <ng-container
+          *ngIf="!formControls.url.valid && formControls.url.touched">
+          <p *ngIf="formControls.url.errors.required">
+            Este Campo es Obligatorio
+          </p>
+        </ng-container>
+      </p>
+  
+
+      <p>
+        <input type="submit" value="Eliminar" (click) = "deleteUsuario()" />
+        <input type="submit" value="Modificar" [disabled]="usuarioForm.invalid" />
+        <input type="submit" value="Atrás" (click) = "atras()" />
+      </p>
+    </form>
+  </div>

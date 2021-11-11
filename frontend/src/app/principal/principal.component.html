@@ -1,0 +1,29 @@
+<div class="content-section">
+    <h2 class="col-lg-10">LISTA DE GRUPOS DE INVESTIGACION</h2>
+
+    <div>
+        <app-datos-gruposinvestigacion *ngFor="let grupoinvestigacion of grupos"
+            [grupoinvestigacion]="grupoinvestigacion">
+        </app-datos-gruposinvestigacion>
+    </div>
+    
+</div>
+
+<div>
+    <button (click)="nuevoGrupo()" class="btn-primary" >Añadir Grupo de investigación</button>
+</div>
+
+<div class="content-section">
+    <h2 class="col-lg-10">LISTA DE USUARIOS</h2>
+
+    <div>
+        <app-datos-usuarios class="mb-0" *ngFor="let usuario of usuarios"
+            [usuario]="usuario">
+        </app-datos-usuarios>
+    </div>
+    
+</div>
+
+<div>
+    <button (click)="nuevoUsuario()" class="btn-primary" >Añadir Usuario</button>
+</div>
